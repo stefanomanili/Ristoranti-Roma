@@ -105,7 +105,7 @@ function miBadge(r){
 function makeCard(r,i){
   var isFav=favs.has(r.n);
   var isWish=wish.has(r.n);
-  var ta='https://www.tripadvisor.it/Search?q='+encodeURIComponent(r.n+' Milano');
+  var ta='https://www.tripadvisor.it/Search?q='+encodeURIComponent(r.n+' Roma');
   var rvs='';
   for(var k=0;k<r.rv.length;k++)rvs+='<div class="rv"><span class="st">\u2605\u2605\u2605\u2605\u2605</span><span>'+r.rv[k]+'</span></div>';
   return '<div class="card">'
@@ -117,6 +117,7 @@ function makeCard(r,i){
     +'<div class="lks">'
     +'<a href="'+maps(r.a)+'" target="_blank">\uD83D\uDCCD '+r.a+'</a>'
     +'<a href="'+r.ws+'" target="_blank" class="ws">\uD83C\uDF10 Sito web</a>'
+    +'<a href="https://www.thefork.it/cerca#query='+encodeURIComponent(r.n+' Roma')+'" target="_blank" style="font-size:10px;color:#00813F;font-weight:500;text-decoration:none;border-bottom:1px solid rgba(0,129,63,.3);">\uD83C\uDF74 TheFork</a>'
     +'<a href="'+ta+'" target="_blank" class="ta">\uD83C\uDF7D TripAdvisor</a>'
     +'</div>'
     +'<div class="sc">'+miBadge(r)
