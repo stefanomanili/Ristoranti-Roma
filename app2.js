@@ -93,7 +93,7 @@ window.toggleWish=function(i){
 window.toggleFav=function(i){
   var n=R[i].n;
   favs.has(n)?favs.delete(n):favs.add(n);
-  saveFavs();document.getElementById('zg').addEventListener('click',function(e){var b=e.target.closest('.fb');if(!b)return;document.querySelectorAll('#zg .fb').forEach(function(x){x.classList.remove('on');});b.classList.add('on');S.z=b.dataset.z;render();});
+  saveFavs();
 
 updateFavCount();render();
 };
@@ -180,6 +180,7 @@ document.getElementById('zg').addEventListener('click',function(e){var b=e.targe
 document.getElementById('favf').addEventListener('click',function(){S.fav=!S.fav;S.wish=false;document.getElementById('wishf').classList.remove('on');this.classList.toggle('on',S.fav);render();});
 document.getElementById('wishf').addEventListener('click',function(){S.wish=!S.wish;S.fav=false;document.getElementById('favf').classList.remove('on');this.classList.toggle('on',S.wish);render();});
 document.getElementById('srch').addEventListener('input',function(e){S.q=e.target.value;render();});
+document.getElementById('zg').addEventListener('click',function(e){var b=e.target.closest('.fb');if(!b)return;document.querySelectorAll('#zg .fb').forEach(function(x){x.classList.remove('on');});b.classList.add('on');S.z=b.dataset.z;render();});
 
 updateFavCount();
 updateWishCount();
